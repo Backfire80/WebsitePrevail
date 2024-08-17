@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ad-Supported GitHub Page</title>
     <style>
-        /* Grid container for vertical sections */
-        .vertical-grid-container {
-            display: grid;
-            grid-template-columns: 1fr; /* Single column layout for vertical sections */
-            grid-template-rows: repeat(5, auto);  /* 5 rows */
-            gap: 10px; /* Gap between grid items */
-            padding: 20px;
-        }
-
         /* Grid container for horizontal sections */
         .horizontal-grid-container {
             display: grid;
@@ -34,10 +25,6 @@
 
         /* Ensure sections are responsive */
         @media only screen and (max-width: 600px) {
-            .vertical-grid-container {
-                grid-template-columns: 1fr; /* Maintain single column on small screens */
-            }
-
             .horizontal-grid-container {
                 grid-template-columns: 1fr; /* Change to single column for horizontal sections */
                 grid-template-rows: repeat(15, auto); /* 15 rows in total */
@@ -50,6 +37,11 @@
 
     <!-- Horizontal Sections (3 rows with 5 sections each) -->
     <div class="horizontal-grid-container">
+        <div class="grid-item" id="ad-section-1"></div>
+        <div class="grid-item" id="ad-section-2"></div>
+        <div class="grid-item" id="ad-section-3"></div>
+        <div class="grid-item" id="ad-section-4"></div>
+        <div class="grid-item" id="ad-section-5"></div>
         <div class="grid-item" id="ad-section-6"></div>
         <div class="grid-item" id="ad-section-7"></div>
         <div class="grid-item" id="ad-section-8"></div>
@@ -63,23 +55,21 @@
     </div>
 
     <script type="text/javascript">
-        
+        // Adsterra ad code as a string
         var adCode = `
+        <!-- Start of Adsterra code -->
         <script type="text/javascript">
-            (function() {
-                // Your actual Adsterra banner ad code goes here
-                <script type="text/javascript">
-	atOptions = {
-		'key' : '729207d8f6890de07863094154c8cd78',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.topcreativeformat.com/729207d8f6890de07863094154c8cd78/invoke.js"></script>
-            })();
-        <\/script>`;
+        atOptions = {
+            'key' : '729207d8f6890de07863094154c8cd78',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+        };
+        <\/script>
+        <script type="text/javascript" src="//www.topcreativeformat.com/729207d8f6890de07863094154c8cd78/invoke.js"><\/script>
+        <!-- End of Adsterra code -->
+        `;
 
         // Loop through each section and insert the ad code
         for (var i = 1; i <= 15; i++) {
