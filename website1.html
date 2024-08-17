@@ -6,23 +6,41 @@
     <title>Ad-Supported GitHub Page</title>
     <style>
         body {
-            font-size: 10px; /* Very small font size */
+            font-size: 6px; /* Extremely small font size */
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
         .horizontal-section {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .subsection {
             flex: 1 1 20%;
             box-sizing: border-box;
             border: 1px solid #ccc;
-            padding: 5px;
+            padding: 2px;
             text-align: center;
             background-color: #f9f9f9;
-            min-height: 250px; /* Minimum height to accommodate the ad */
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ad-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ad-container iframe {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
         }
         @media only screen and (max-width: 600px) {
             .horizontal-section {
@@ -30,7 +48,7 @@
             }
             .subsection {
                 flex: 1 1 100%;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -39,48 +57,55 @@
     <h1>Welcome to My Ad-Supported GitHub Page</h1>
     
     <div class="horizontal-section">
-        <div class="subsection" id="ad-section-1"></div>
-        <div class="subsection" id="ad-section-2"></div>
-        <div class="subsection" id="ad-section-3"></div>
-        <div class="subsection" id="ad-section-4"></div>
-        <div class="subsection" id="ad-section-5"></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-1"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-2"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-3"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-4"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-5"></div></div>
     </div>
     
     <div class="horizontal-section">
-        <div class="subsection" id="ad-section-6"></div>
-        <div class="subsection" id="ad-section-7"></div>
-        <div class="subsection" id="ad-section-8"></div>
-        <div class="subsection" id="ad-section-9"></div>
-        <div class="subsection" id="ad-section-10"></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-6"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-7"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-8"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-9"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-10"></div></div>
     </div>
     
     <div class="horizontal-section">
-        <div class="subsection" id="ad-section-11"></div>
-        <div class="subsection" id="ad-section-12"></div>
-        <div class="subsection" id="ad-section-13"></div>
-        <div class="subsection" id="ad-section-14"></div>
-        <div class="subsection" id="ad-section-15"></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-11"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-12"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-13"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-14"></div></div>
+        <div class="subsection"><div class="ad-container" id="ad-section-15"></div></div>
     </div>
 
     <script type="text/javascript">
-        // Adsterra ad code as a string
+        // Your Adsterra ad code goes here (replace the entire adCode variable content)
         var adCode = `
         <!-- Start of Adsterra code -->
         <script type="text/javascript">
-        atOptions = {
-            'key' : '729207d8f6890de07863094154c8cd78',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-        };
-        <\/script>
-        <script type="text/javascript" src="//www.topcreativeformat.com/729207d8f6890de07863094154c8cd78/invoke.js"><\/script>
+	atOptions = {
+		'key' : '729207d8f6890de07863094154c8cd78',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.topcreativeformat.com/729207d8f6890de07863094154c8cd78/invoke.js"></script>
         <!-- End of Adsterra code -->
         `;
-        // Loop through each section and insert the ad code
+
+        // Function to create and insert Adsterra ad
+        function createAd(elementId) {
+            var adContainer = document.getElementById(elementId);
+            adContainer.innerHTML = adCode;
+        }
+
+        // Create ads for all sections
         for (var i = 1; i <= 15; i++) {
-            document.getElementById('ad-section-' + i).innerHTML = adCode;
+            createAd('ad-section-' + i);
         }
     </script>
 </body>
