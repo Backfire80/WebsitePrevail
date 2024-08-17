@@ -5,53 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ad-Supported GitHub Page</title>
     <style>
-        /* Grid container for horizontal sections */
-        .horizontal-grid-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 columns in each row */
-            grid-template-rows: repeat(3, auto);  /* 3 rows */
-            gap: 10px; /* Gap between grid items */
-            padding: 20px;
+        body {
+            font-size: 10px; /* Very small font size */
+            margin: 0;
+            padding: 0;
         }
-
-        /* Grid items (sections) */
-        .grid-item {
+        .horizontal-section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .subsection {
+            flex: 1 1 20%;
+            box-sizing: border-box;
             border: 1px solid #ccc;
-            padding: 20px;
+            padding: 5px;
             text-align: center;
             background-color: #f9f9f9;
-            height: 200px; /* Fixed height for visual consistency */
+            min-height: 250px; /* Minimum height to accommodate the ad */
         }
-
-        /* Ensure sections are responsive */
         @media only screen and (max-width: 600px) {
-            .horizontal-grid-container {
-                grid-template-columns: 1fr; /* Change to single column for horizontal sections */
-                grid-template-rows: repeat(15, auto); /* 15 rows in total */
+            .horizontal-section {
+                flex-direction: column;
+            }
+            .subsection {
+                flex: 1 1 100%;
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 <body>
     <h1>Welcome to My Ad-Supported GitHub Page</h1>
-
-    <!-- Horizontal Sections (3 rows with 5 sections each) -->
-    <div class="horizontal-grid-container">
-        <div class="grid-item" id="ad-section-1"></div>
-        <div class="grid-item" id="ad-section-2"></div>
-        <div class="grid-item" id="ad-section-3"></div>
-        <div class="grid-item" id="ad-section-4"></div>
-        <div class="grid-item" id="ad-section-5"></div>
-        <div class="grid-item" id="ad-section-6"></div>
-        <div class="grid-item" id="ad-section-7"></div>
-        <div class="grid-item" id="ad-section-8"></div>
-        <div class="grid-item" id="ad-section-9"></div>
-        <div class="grid-item" id="ad-section-10"></div>
-        <div class="grid-item" id="ad-section-11"></div>
-        <div class="grid-item" id="ad-section-12"></div>
-        <div class="grid-item" id="ad-section-13"></div>
-        <div class="grid-item" id="ad-section-14"></div>
-        <div class="grid-item" id="ad-section-15"></div>
+    
+    <div class="horizontal-section">
+        <div class="subsection" id="ad-section-1"></div>
+        <div class="subsection" id="ad-section-2"></div>
+        <div class="subsection" id="ad-section-3"></div>
+        <div class="subsection" id="ad-section-4"></div>
+        <div class="subsection" id="ad-section-5"></div>
+    </div>
+    
+    <div class="horizontal-section">
+        <div class="subsection" id="ad-section-6"></div>
+        <div class="subsection" id="ad-section-7"></div>
+        <div class="subsection" id="ad-section-8"></div>
+        <div class="subsection" id="ad-section-9"></div>
+        <div class="subsection" id="ad-section-10"></div>
+    </div>
+    
+    <div class="horizontal-section">
+        <div class="subsection" id="ad-section-11"></div>
+        <div class="subsection" id="ad-section-12"></div>
+        <div class="subsection" id="ad-section-13"></div>
+        <div class="subsection" id="ad-section-14"></div>
+        <div class="subsection" id="ad-section-15"></div>
     </div>
 
     <script type="text/javascript">
@@ -59,18 +67,17 @@
         var adCode = `
         <!-- Start of Adsterra code -->
         <script type="text/javascript">
-	atOptions = {
-		'key' : '94f43629b735b9a3371e516a04f8e94e',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.topcreativeformat.com/94f43629b735b9a3371e516a04f8e94e/invoke.js"></script>
+        atOptions = {
+            'key' : '729207d8f6890de07863094154c8cd78',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+        };
+        <\/script>
+        <script type="text/javascript" src="//www.topcreativeformat.com/729207d8f6890de07863094154c8cd78/invoke.js"><\/script>
         <!-- End of Adsterra code -->
         `;
-
         // Loop through each section and insert the ad code
         for (var i = 1; i <= 15; i++) {
             document.getElementById('ad-section-' + i).innerHTML = adCode;
