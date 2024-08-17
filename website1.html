@@ -48,6 +48,15 @@
 <body>
     <h1>Welcome to My Ad-Supported GitHub Page</h1>
 
+    <!-- Vertical Sections -->
+    <div class="vertical-grid-container">
+        <div class="grid-item" id="ad-section-1"></div>
+        <div class="grid-item" id="ad-section-2"></div>
+        <div class="grid-item" id="ad-section-3"></div>
+        <div class="grid-item" id="ad-section-4"></div>
+        <div class="grid-item" id="ad-section-5"></div>
+    </div>
+
     <!-- Horizontal Sections (3 rows with 5 sections each) -->
     <div class="horizontal-grid-container">
         <div class="grid-item" id="ad-section-6"></div>
@@ -79,6 +88,8 @@
 </script>
 <script type="text/javascript" src="//www.topcreativeformat.com/729207d8f6890de07863094154c8cd78/invoke.js"></script>
 		
+        <\/script>`;
+
         // Loop through each section and insert the ad code
         for (var i = 1; i <= 15; i++) {
             document.getElementById('ad-section-' + i).innerHTML = adCode;
